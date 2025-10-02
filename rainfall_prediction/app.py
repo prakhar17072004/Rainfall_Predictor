@@ -2,14 +2,19 @@ from flask import Flask, render_template, request
 import joblib
 import numpy as np
 import requests
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env
+load_dotenv()
 
 app = Flask(__name__)
 
 # Load trained ML model
 model = joblib.load('model.joblib')
 
-# OpenWeatherMap API key
-API_KEY = "YOUR_API_KEY"  # Replace with your key
+# Get API key from environment
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -17,11 +22,9 @@ def index():
     weather_data = {}
     
     if request.method == 'POST':
-        # Get lat & lon from form
         lat = request.form['lat']
         lon = request.form['lon']
         
-        # Call OpenWeatherMap API
         url = f"http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}&units=metric"
         response = requests.get(url)
         data = response.json()
@@ -38,7 +41,6 @@ def index():
             'wind_speed': wind_speed
         }
 
-        # Predict rainfall
         input_features = np.array([[temperature, humidity, pressure, wind_speed]])
         prediction = model.predict(input_features)[0]
         prediction = round(prediction, 2)
