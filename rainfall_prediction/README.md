@@ -1,40 +1,39 @@
-🌧️ Rainfall Prediction Project
--------------------------------------
+# 🌧️ Rainfall Prediction Dashboard
 
-This project predicts whether it will rain or not based on weather parameters using a Machine Learning model integrated into a Django web application.
+This project predicts the probability of rainfall based on weather parameters using a **Machine Learning model** integrated into a **Flask web application**. Users can view current weather data for their location or manually enter a city and country to get rainfall predictions.
 
+---
 
-📌 Features
---------------
+## 📌 Features
 
-Predicts rainfall using key weather features:
+- Predict rainfall probability using key weather features:
+  - Temperature
+  - Humidity
+  - Pressure
+  - Wind Speed
+- View **location and country** of the selected city.
+- Users can **manually change city and country** to check weather and rainfall prediction.
+- ML model integrated via **Joblib**.
+- Simple **dashboard UI** built with **Bootstrap**.
+- Real-time weather data fetched from **OpenWeatherMap API**.
 
-Precipitation
+---
 
-Maximum Temperature
+## 🛠️ Tech Stack
 
-Minimum Temperature
+- **Programming Language:** Python  
+- **Frameworks / Libraries:**  
+  - Flask  
+  - pandas, numpy  
+  - scikit-learn  
+  - Joblib  
+  - requests  
+  - python-dotenv  
+- **Frontend:** HTML, CSS, Bootstrap, Jinja2 Templates  
+- **API:** OpenWeatherMap API  
+- **Deployment:** Render  
 
-Wind Speed
+---
 
-Machine Learning model built using Logistic Regression.
+## ⚙️ Project Structure
 
-Django-based web app for user interaction.
-
-Simple UI to input weather data and get predictions.
-
-
-🛠️ Tech Stack
------------------
-
-Programming Language: Python
-
-Frameworks/Libraries:
-
-Django
-
-Scikit-learn
-
-Pandas, NumPy
-
-HTML, CSS (for frontend UI)
