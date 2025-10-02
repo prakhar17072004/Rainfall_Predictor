@@ -1,0 +1,32 @@
+FrameWork :-
+
+ FrameWorks are installable software they provide us pre-designed architecture. by using framework you can develope  s/w application more easily.
+
+
+Django Framework :-
+
+Django is web framework written in powerful python programming language. Django Follows MVT architecture.
+
+MVC (Model-View-Controller) Architecture:
+----------------------------------------------------
+
+Django follows the MTV (Model-Template-View) pattern, which is a slight variation of MVC:
+
+1. Model: Manages the data and database structure.
+
+2.Template: Handles the HTML/CSS part (front-end).
+
+3. View: Manages the logic and communicates between models and templates.
+(contains business logic of your web application)
+
+
+
+
+
+command to create a Django project
+
+django-admin startproject myproject 
+
+code to run  Django project:-
+----------------------------------
+python manage.py runserver
