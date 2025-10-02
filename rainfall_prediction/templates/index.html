@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Rainfall Prediction</h1>
+<form method="POST">
+    <div class="mb-3">
+        <label>Temperature (°C)</label>
+        <input type="number" step="0.1" name="temperature" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Humidity (%)</label>
+        <input type="number" step="0.1" name="humidity" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Pressure (hPa)</label>
+        <input type="number" step="0.1" name="pressure" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Wind Speed (km/h)</label>
+        <input type="number" step="0.1" name="wind_speed" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Predict Rainfall</button>
+</form>
+
+{% if prediction is not none %}
+    <div class="alert alert-info mt-3">
+        Predicted Rainfall Probability: {{ prediction }} %
+    </div>
+{% endif %}
+{% endblock %}
