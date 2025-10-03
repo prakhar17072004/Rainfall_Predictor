@@ -17,8 +17,8 @@ def dashboard():
     weather_data = {}
     location_info = {}
 
-    city = "London"  # default city
-    country = ""
+    city = "New Delhi"  # default city
+    country = "India"
 
     if request.method == 'POST':
         city = request.form['city']
